@@ -70,7 +70,7 @@ that exports **all** classes defined in your project.
 The Components.js generator will use to file to generate its descriptions,
 so if it's not in there the generator does not know it exists.
 
-### src/HelloWorld.ts
+### src/HelloWorld.test.ts
 In general when creating a class to inject into CSS, 
 you will want to extend an interface/abstract class from the main repository.
 Which one depends on what you want to do and where your component would fit into the architecture.
@@ -111,3 +111,28 @@ We then add that instantiation to the list of Initializers that get executed whe
 
 Something that is easily missed is that at the top of this configuration, we are now importing 2 contexts:
 our own new context, and the original one from CSS.
+
+## test
+An important part of creating a new component is testing to make sure everything works correctly.
+For this we make use of the [jest](https://jestjs.io/) test framework,
+but any test framework that has TypeScript support can be used.
+
+### test/config/hello-world-memory.json
+This is a configuration file that is used to test a server running with our new component.
+It is very similar to the `hello-world-file.json` from above,
+but configured so that everything is stored in memory, to prevent writing files during tests,
+and so that the server immediately initializes on startup so no manual setup is needed.
+
+### test/integration/Server.test.ts
+One thing we want to test is if the server with our new component behaves as expected.
+This integration test sets up a complete and running CSS instance and performs an HTTP request to see the response.
+More details on how this happens can be found in the file itself.
+
+### test/unit/HelloWorld.test.ts
+To make sure all our individual classes do what we want them to do,
+we need to have unit tests to test all possible situations.
+In this case we make sure the logger gets called with the correct string.
+
+### jest.config.js
+A minimal jest configuration.
+To extend this, see https://jestjs.io/docs/configuration.
