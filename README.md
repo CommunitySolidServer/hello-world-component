@@ -70,7 +70,7 @@ that exports **all** classes defined in your project.
 The Components.js generator will use to file to generate its descriptions,
 so if it's not in there the generator does not know it exists.
 
-### src/HelloWorld.test.ts
+### src/HelloWorld.ts
 In general when creating a class to inject into CSS, 
 you will want to extend an interface/abstract class from the main repository.
 Which one depends on what you want to do and where your component would fit into the architecture.
