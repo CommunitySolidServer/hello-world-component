@@ -112,6 +112,11 @@ We then add that instantiation to the list of Initializers that get executed whe
 Something that is easily missed is that at the top of this configuration, we are now importing 2 contexts:
 our own new context, and the original one from CSS.
 
+This file can also be combined with the CSS configuration tool as described 
+[here](https://github.com/CommunitySolidServer/configuration-generator/).
+For example, you can generate configurations that already include the necessary extra lines to add the new component
+[here](https://communitysolidserver.github.io/configuration-generator/v6/?config=https%3A%2F%2Fraw.githubusercontent.com%2FCommunitySolidServer%2Fhello-world-component%2Fmain%2Fhello-world-file.json)
+
 ## test
 An important part of creating a new component is testing to make sure everything works correctly.
 For this we make use of the [jest](https://jestjs.io/) test framework,

@@ -1,6 +1,6 @@
 {
   "name": "hello-world-module",
-  "version": "5.0.0",
+  "version": "6.0.0",
   "description": "A minimal example of a repository containing an injectable Community Solid Server module",
   "repository": "git@github.com:CommunitySolidServer/hello-world-module.git",
   "main": "./dist/index.js",
@@ -8,12 +8,12 @@
   "lsd:module": "https://linkedsoftwaredependencies.org/bundles/npm/hello-world-module",
   "lsd:components": "dist/components/components.jsonld",
   "lsd:contexts": {
-    "https://linkedsoftwaredependencies.org/bundles/npm/hello-world-module/^5.0.0/components/context.jsonld": "dist/components/context.jsonld"
+    "https://linkedsoftwaredependencies.org/bundles/npm/hello-world-module/^6.0.0/components/context.jsonld": "dist/components/context.jsonld"
   },
   "lsd:importPaths": {
-    "https://linkedsoftwaredependencies.org/bundles/npm/hello-world-module/^5.0.0/components/": "dist/components/",
-    "https://linkedsoftwaredependencies.org/bundles/npm/hello-world-module/^5.0.0/config/": "config/",
-    "https://linkedsoftwaredependencies.org/bundles/npm/hello-world-module/^5.0.0/dist/": "dist/"
+    "https://linkedsoftwaredependencies.org/bundles/npm/hello-world-module/^6.0.0/components/": "dist/components/",
+    "https://linkedsoftwaredependencies.org/bundles/npm/hello-world-module/^6.0.0/config/": "config/",
+    "https://linkedsoftwaredependencies.org/bundles/npm/hello-world-module/^6.0.0/dist/": "dist/"
   },
   "scripts": {
     "start": "community-solid-server -c hello-world-file.json -f .data -m .",
@@ -28,7 +28,7 @@
     "config"
   ],
   "dependencies": {
-    "@solid/community-server": "^5.0.0"
+    "@solid/community-server": "^6.0.0"
   },
   "devDependencies": {
     "@tsconfig/node14": "^1.0.3",
