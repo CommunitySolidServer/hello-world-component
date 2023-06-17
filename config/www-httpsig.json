@@ -1,0 +1,11 @@
+{
+  "@context": "https://linkedsoftwaredependencies.org/bundles/npm/@solid/community-server/^6.0.0/components/context.jsonld",
+  "@graph": [
+    {
+      "comment": "Adds the WWW-Authenticate header on 401 responses. The httpsig value us required for.",
+      "@id": "urn:solid-server:httpsig:MetadataWriter_WwwAuth",
+      "@type": "WwwAuthMetadataWriter",
+      "auth": "httpsig"
+    }
+  ]
+}

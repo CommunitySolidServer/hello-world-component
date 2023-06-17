@@ -1,27 +1,29 @@
 {
-  "name": "hello-world-module",
+  "name": "httpsig-module",
   "version": "6.0.0",
   "description": "A minimal example of a repository containing an injectable Community Solid Server module",
-  "repository": "git@github.com:CommunitySolidServer/hello-world-module.git",
+  "repository": "git@github.com:CommunitySolidServer/httpsig-module.git",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "lsd:module": "https://linkedsoftwaredependencies.org/bundles/npm/hello-world-module",
+  "lsd:module": "https://linkedsoftwaredependencies.org/bundles/npm/httpsig-module",
   "lsd:components": "dist/components/components.jsonld",
   "lsd:contexts": {
-    "https://linkedsoftwaredependencies.org/bundles/npm/hello-world-module/^6.0.0/components/context.jsonld": "dist/components/context.jsonld"
+    "https://linkedsoftwaredependencies.org/bundles/npm/httpsig-module/^6.0.0/components/context.jsonld": "dist/components/context.jsonld"
   },
   "lsd:importPaths": {
-    "https://linkedsoftwaredependencies.org/bundles/npm/hello-world-module/^6.0.0/components/": "dist/components/",
-    "https://linkedsoftwaredependencies.org/bundles/npm/hello-world-module/^6.0.0/config/": "config/",
-    "https://linkedsoftwaredependencies.org/bundles/npm/hello-world-module/^6.0.0/dist/": "dist/"
+    "https://linkedsoftwaredependencies.org/bundles/npm/httpsig-module/^6.0.0/components/": "dist/components/",
+    "https://linkedsoftwaredependencies.org/bundles/npm/httpsig-module/^6.0.0/config/": "config/",
+    "https://linkedsoftwaredependencies.org/bundles/npm/httpsig-module/^6.0.0/dist/": "dist/"
   },
   "scripts": {
-    "start": "community-solid-server -c hello-world-file.json -f .data -m .",
+    "start": "community-solid-server -c httpsig-file.json -f .data -m .",
+    "start:seeded": "npm run start -- --seededPodConfigJson ./seed.json",
     "build": "npm run build:ts && npm run build:components",
-    "build:components": "componentsjs-generator -s src -c dist/components -i .componentsignore -r hello-world",
+    "build:components": "componentsjs-generator -s src -c dist/components -i .componentsignore -r httpsig",
     "build:ts": "tsc",
     "prepare": "npm run build",
-    "test": "jest"
+    "test": "jest",
+    "test:401": "curl http://localhost:3000/example/profile/card/ -v"
   },
   "files": [
     "dist",

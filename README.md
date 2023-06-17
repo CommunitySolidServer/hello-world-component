@@ -44,7 +44,7 @@ But if you use the same structure as this project these entries are enough as th
  * Where to find custom configurations.
  * Where to find the descriptions of all the classes.
 
-When creating your own project you will need to update all the URLs above and replace `hello-world-module`
+When creating your own project you will need to update all the URLs above and replace `httpsig-module`
 with your own package name, and the version number with your version number.
 Note that Components.js only uses major version number, so the URL will always contain `x.0.0`,
 even if your version number is `x.y.z`.
@@ -91,7 +91,7 @@ Note that the files here are not required to make this repository a valid Compon
 but they do make it much easier when other people want to make use of your component
 so they do not have to configure everything themselves.
 
-### config/hello-world.json
+### config/httpsig.json
 Since this project only has 1 small class with no parameters,
 the configuration simply initializes that 1 class and assigns it a unique identifier.
 We import our own new context at the top so Component.js recognizes our new class.
@@ -99,7 +99,7 @@ It knows where to find this context due to the fields added in the `package.json
 Note that this identifier does not have to start with `urn:` or look like that,
 any valid URI is accepted.
 
-## hello-world-file.json
+## httpsig-file.json
 This file is used as a single example on how to start a CSS instance,
 injected with the new component.
 Since there are so many ways to configure CSS, it is impossible to cover everything,
@@ -115,16 +115,16 @@ our own new context, and the original one from CSS.
 This file can also be combined with the CSS configuration tool as described 
 [here](https://github.com/CommunitySolidServer/configuration-generator/).
 For example, you can generate configurations that already include the necessary extra lines to add the new component
-[here](https://communitysolidserver.github.io/configuration-generator/v6/?config=https%3A%2F%2Fraw.githubusercontent.com%2FCommunitySolidServer%2Fhello-world-component%2Fmain%2Fhello-world-file.json)
+[here](https://communitysolidserver.github.io/configuration-generator/v6/?config=https%3A%2F%2Fraw.githubusercontent.com%2FCommunitySolidServer%2Fhttpsig-component%2Fmain%2Fhttpsig-file.json)
 
 ## test
 An important part of creating a new component is testing to make sure everything works correctly.
 For this we make use of the [jest](https://jestjs.io/) test framework,
 but any test framework that has TypeScript support can be used.
 
-### test/config/hello-world-memory.json
+### test/config/httpsig-memory.json
 This is a configuration file that is used to test a server running with our new component.
-It is very similar to the `hello-world-file.json` from above,
+It is very similar to the `httpsig-file.json` from above,
 but configured so that everything is stored in memory, to prevent writing files during tests,
 and so that the server immediately initializes on startup so no manual setup is needed.
 

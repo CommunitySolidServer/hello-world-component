@@ -18,7 +18,7 @@ describe('My Server', (): void => {
         dumpErrorState: false,
       },
       // For testing we created a custom configuration that runs the server in memory so nothing gets written on disk.
-      joinFilePath(__dirname, '../config/hello-world-memory.json'),
+      joinFilePath(__dirname, '../config/httpsig-memory.json'),
       // We do not use any custom Components.js variable bindings and set our values through the CLI options below.
       {},
       // We use the CLI options to set the port of our server to 3456

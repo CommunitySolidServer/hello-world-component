@@ -1,0 +1,20 @@
+{
+  "@context": [
+    "https://linkedsoftwaredependencies.org/bundles/npm/@solid/community-server/^6.0.0/components/context.jsonld",
+    "https://linkedsoftwaredependencies.org/bundles/npm/httpsig-module/^6.0.0/components/context.jsonld"
+  ],
+  "import": [
+    "css:config/default.json",
+    "httpsig:config/www-httpsig.json"
+  ],
+  "@graph": [
+    {
+      "comment": "TODO: Properly override https://github.com/CommunitySolidServer/CommunitySolidServer/blob/eb0a8f3dba18143b86da0b8a39329a676b2a3c67/config/ldp/metadata-writer/default.json",
+      "@id": "urn:solid-server:default:MetadataWriter",
+      "@type": "ParallelHandler",
+      "handlers": [
+        { "@id": "urn:solid-server:httpsig:MetadataWriter_WwwAuth" }
+      ]
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "@context": [
     "https://linkedsoftwaredependencies.org/bundles/npm/@solid/community-server/^6.0.0/components/context.jsonld",
-    "https://linkedsoftwaredependencies.org/bundles/npm/hello-world-module/^6.0.0/components/context.jsonld"
+    "https://linkedsoftwaredependencies.org/bundles/npm/httpsig-module/^6.0.0/components/context.jsonld"
   ],
   "import": [
     "css:config/app/main/default.json",
@@ -36,14 +36,14 @@
     "css:config/util/resource-locker/memory.json",
     "css:config/util/variables/default.json",
 
-    "hello-world:config/hello-world.json"
+    "httpsig:config/httpsig.json"
   ],
   "@graph": [
     {
       "@id": "urn:solid-server:default:PrimaryParallelInitializer",
       "@type": "ParallelHandler",
       "handlers": [
-        { "@id" : "urn:my-hello-world:core:HelloWorld" }
+        { "@id" : "urn:my-httpsig:core:HelloWorld" }
       ]
     }
   ]
