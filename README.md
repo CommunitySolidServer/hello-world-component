@@ -31,3 +31,14 @@ refer to the readme over there for any other questions about the structure of th
 
  - `npm run start:seeded`: Start the server with a seeded account; the WebId of this account is http://localhost:3000/example/profile/card#me.
  - `npm run test:401`: Do a get request on a resource in the example account that is Unauthorized for Public Access.
+
+## Components
+
+### Adding WWW-Authenticate Headers
+
+The `WWW-Authenticate` header for HttpSig uses the existing `WWW-Authenticate` component. If we want to add extra customised
+values we will probably need to add our own component. 
+
+### Verifying the request and extracting the WebId
+
+This is the core logic of this libary. The (WIP) component implementing that is [here](./src/HttpSigExtractor.ts).

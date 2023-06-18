@@ -9,12 +9,46 @@
   ],
   "@graph": [
     {
-      "comment": "TODO: Properly override https://github.com/CommunitySolidServer/CommunitySolidServer/blob/eb0a8f3dba18143b86da0b8a39329a676b2a3c67/config/ldp/metadata-writer/default.json",
+      "comment": "Supply an additional handler to the existing MetadataWriter",
       "@id": "urn:solid-server:default:MetadataWriter",
       "@type": "ParallelHandler",
-      "handlers": [
-        { "@id": "urn:solid-server:httpsig:MetadataWriter_WwwAuth" }
-      ]
+      "handlers": { "@id": "urn:solid-server:httpsig:MetadataWriter_WwwAuth" }
+    },
+    {
+      "@type": "Override",
+      "comment": "Caches the credentials based on the incoming request.",
+      "overrideInstance": { "@id": "urn:solid-server:default:CredentialsExtractor" },
+      "overrideParameters": {
+        "@type": "CachedHandler",
+        "source": {
+          "comment": "Supports DPoP and Bearer access tokens, or no credentials.",
+          "@type": "UnionCredentialsExtractor",
+          "extractors": [
+            {
+              "@type": "WaterfallHandler",
+              "handlers": [
+                {
+                  "@type": "HttpSigWebIdExtractor",
+                  "comment": "TODO: Remove this if we don't need the OriginalUrlExtractor",
+                  "originalUrlExtractor": {
+                    "@type": "OriginalUrlExtractor",
+                    "args_identifierStrategy": { "@id": "urn:solid-server:default:IdentifierStrategy" }
+                  }
+                },
+                {
+                  "@type": "DPoPWebIdExtractor",
+                  "originalUrlExtractor": {
+                    "@type": "OriginalUrlExtractor",
+                    "args_identifierStrategy": { "@id": "urn:solid-server:default:IdentifierStrategy" }
+                  }
+                },
+                { "@type": "BearerWebIdExtractor" }
+              ]
+            },
+            { "@type": "PublicCredentialsExtractor" }
+          ]
+        }
+      }
     }
   ]
 }
