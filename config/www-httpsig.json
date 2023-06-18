@@ -5,7 +5,7 @@
       "comment": "Adds the WWW-Authenticate header on 401 responses. The httpsig value us required for.",
       "@id": "urn:solid-server:httpsig:MetadataWriter_WwwAuth",
       "@type": "WwwAuthMetadataWriter",
-      "auth": "httpsig"
+      "auth": "HttpSig"
     }
   ]
 }
