@@ -8,6 +8,7 @@ import {
   getLoggerFor,
   matchesAuthorizationScheme
 } from "@solid/community-server";
+import { serializeParameters, serializeString } from 'structured-headers';
 
 // See https://github.com/CommunitySolidServer/CommunitySolidServer/blob/3fbdc69f3f3bb9c0733ec59c21f0f2f890d0afde/src/authentication/BearerWebIdExtractor.ts
 // and similar extractors for inspipration
@@ -23,6 +24,25 @@ export class HttpSigWebIdExtractor extends CredentialsExtractor {
   }
 
   public async canHandle(request: HttpRequest): Promise<void> {
+    // const parameters: Parameters = new Map()
+
+
+    console.log('='.repeat(20))
+    console.log(request.headers)
+    console.log('-'.repeat(20))
+    try {
+      // @ts-ignore
+      console.log(
+        // @ts-ignore
+        serializeParameters(new Map(Object.entries(request.headers)))
+      )
+      // console.log(parseItem(request.rawHeaders[0]))
+    } catch (e) {
+      console.log('error trying to serialize', e)
+    }
+    console.log('='.repeat(20))
+
+
     const originalUrl = await this.originalUrlExtractor.handleSafe({ request });
     this.logger.info(`Attempting to handle HttpSigExtractor for URL [${originalUrl.path}]`)
 

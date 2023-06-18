@@ -23,14 +23,15 @@
     "build:ts": "tsc",
     "prepare": "npm run build",
     "test": "jest",
-    "test:401": "curl http://localhost:3000/example/profile/card/ -v"
+    "test:401": "curl http://localhost:3000/example/profile/card/ -v -H \"Accept: text/turtle\""
   },
   "files": [
     "dist",
     "config"
   ],
   "dependencies": {
-    "@solid/community-server": "^6.0.0"
+    "@solid/community-server": "^6.0.0",
+    "structured-headers": "^1.0.0"
   },
   "devDependencies": {
     "@tsconfig/node14": "^1.0.3",
