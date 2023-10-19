@@ -115,7 +115,17 @@ our own new context, and the original one from CSS.
 This file can also be combined with the CSS configuration tool as described 
 [here](https://github.com/CommunitySolidServer/configuration-generator/).
 For example, you can generate configurations that already include the necessary extra lines to add the new component
-[here](https://communitysolidserver.github.io/configuration-generator/v6/?config=https%3A%2F%2Fraw.githubusercontent.com%2FCommunitySolidServer%2Fhello-world-component%2Fmain%2Fhello-world-file.json)
+[here](https://communitysolidserver.github.io/configuration-generator/v7/?config=https%3A%2F%2Fraw.githubusercontent.com%2FCommunitySolidServer%2Fhello-world-component%2Fmain%2Fhello-world-file.json).
+
+## hello-world-partial.json
+Similar to hello-world-file.json this configuration defines how the new component is added to a CSS instance.
+The difference being that this one lacks all the necessary imports.
+This can be combined with an already existing CSS configuration
+by providing both as config parameters when starting CSS.
+An example of the difference can be seen in the `start` and `start-alt` scripts in the `package.json`.
+
+Such a configuration can also be injected into the configuration tool as can be seen
+[here](https://communitysolidserver.github.io/configuration-generator/v7/?config=https%3A%2F%2Fraw.githubusercontent.com%2FCommunitySolidServer%2Fhello-world-component%2Fmain%2Fhello-world-partial.json).
 
 ## test
 An important part of creating a new component is testing to make sure everything works correctly.

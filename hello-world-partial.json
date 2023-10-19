@@ -1,0 +1,24 @@
+{
+  "@context": [
+    "https://linkedsoftwaredependencies.org/bundles/npm/@solid/community-server/^7.0.0/components/context.jsonld",
+    "https://linkedsoftwaredependencies.org/bundles/npm/hello-world-module/^7.0.0/components/context.jsonld"
+  ],
+  "import": [
+    "hello-world:config/hello-world.json"
+  ],
+  "@graph": [
+    {
+      "comment": [
+        "Adds the Hello World initializer to the primary CSS initializer.",
+        "This configuration needs to be combined with a default CSS configuration to be functional."
+      ]
+    },
+    {
+      "@id": "urn:solid-server:default:PrimaryParallelInitializer",
+      "@type": "ParallelHandler",
+      "handlers": [
+        { "@id" : "urn:my-hello-world:core:HelloWorld" }
+      ]
+    }
+  ]
+}
