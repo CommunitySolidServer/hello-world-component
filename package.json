@@ -29,7 +29,7 @@
     "config"
   ],
   "dependencies": {
-    "@solid/community-server": "^7.0.0"
+    "@solid/community-server": "^7.0.1"
   },
   "devDependencies": {
     "@tsconfig/node18": "^18.2.2",
