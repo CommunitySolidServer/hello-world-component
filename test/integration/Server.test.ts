@@ -1,5 +1,4 @@
 import { App, AppRunner, joinFilePath } from '@solid/community-server';
-import fetch from 'node-fetch';
 
 describe('My Server', (): void => {
   let app: App;
