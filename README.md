@@ -12,6 +12,10 @@ the one used here is just an example.
 
 The major version of this repository corresponds to the CSS major version it supports.
 
+Instead of copying this repository,
+there is also a CLI tool that sets up a repository using the templates here, and more,
+at <https://github.com/liquid-surf/css-component-generator>.
+
 Below we go over all the files in the repository and how they relate to the component.
 
 ## tsconfig.json
